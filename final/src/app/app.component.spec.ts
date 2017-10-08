@@ -37,7 +37,7 @@ describe( `AppComponent`, () => {
 
   } ) );
 
-  it( `should render Hello Pluto!!!`, () => {
+  it( `should render Hello World!!`, () => {
 
     const {compiledElement} = render(TestComponent);
 
@@ -45,7 +45,7 @@ describe( `AppComponent`, () => {
     const { debugElement, componentInstance } = queryByDirective( compiledElement, AppComponent );
 
     expect( componentInstance instanceof AppComponent ).toBe( true );
-    expect( debugElement.text() ).toContain( 'Hello from Pluto !' );
+    expect( debugElement.text() ).toContain( 'Hello World! !' );
 
   } );
 
