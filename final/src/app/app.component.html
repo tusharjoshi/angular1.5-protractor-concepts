@@ -1,27 +1,3 @@
 <h1>Hello {{ $ctrl.place }} !</h1>
 
-<div>
-    <table class="table">
-        <tr>
-            <th>Title</th>
-            <th>Length</th>
-            <th>Rating</th>
-            <th></th>
-        </tr>
-        <tr ng-repeat="movie in $ctrl.movies">
-            <td>{{movie.title}}</td>
-            <td>{{movie.length}}</td>
-            <td>{{movie.rating}}</td>
-            <td>
-                <div class="btn-group">
-                    <button class="btn btn-default" ng-click="$ctrl.upRating(movie)">
-                        <span class="glyphicon glyphicon-plus"></span>
-                    </button>
-                    <button class="btn btn-default" ng-click="$ctrl.downRating(movie)">
-                        <span class="glyphicon glyphicon-minus"></span>
-                    </button>
-                </div>
-            </td>
-        </tr>
-    </table>
-</div>
+<movies></movies>
