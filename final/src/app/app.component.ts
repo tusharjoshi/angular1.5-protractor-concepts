@@ -11,7 +11,7 @@ export class AppComponent {
   place = 'World!';
 
   changeMessage() {
-    this.place = "Universe"
+    this.place = 'Universe';
   }
 
 }
