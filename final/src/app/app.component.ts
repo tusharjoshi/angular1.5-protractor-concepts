@@ -1,5 +1,6 @@
 import { Component } from 'ng-metadata/core';
-import { MoviesComponent } from './movies/movies.component'
+import { MoviesComponent } from './movies/movies.component';
+import { TextButtonComponent } from './shared/text-button.component';
 
 @Component({
   selector: 'np-app',
