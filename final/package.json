@@ -63,6 +63,7 @@
     "lodash": "4.17.4",
     "node-sass": "4.5.3",
     "protractor": "^5.1.2",
+    "protractor-screenshoter-plugin": "^0.3.2",
     "raw-loader": "0.5.1",
     "remap-istanbul": "0.9.5",
     "rimraf": "2.6.1",
