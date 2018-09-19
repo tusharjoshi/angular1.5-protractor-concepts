@@ -1,42 +1,38 @@
-import { Component, OnInit, Inject } from 'ng-metadata/core';
+import { Component, Inject, OnInit } from 'ng-metadata/core';
+import { MovieService } from './movies.service';
 
 @Component({
   selector: 'np-movies',
   styles: [ require( './movies.scss' ) ],
-  template: require('./movies.component.html')
+  template: require('./movies.component.html'),
+  providers: [ MovieService ]
 })
 export class MoviesComponent implements OnInit {
 
-  movies = [];
+  movies: any[];
 
-  constructor(
-    @Inject('$http') private $http: ng.IHttpService
-  ) {
-  }
+  constructor(@Inject('movieService') private movieService,
+    @Inject('$log') private $log: ng.ILogService ) {
 
-  fetchMovies($http) {
-    return $http.get('/movies.json')
-    .then((response) => {
-      return response.data;
-    });
   }
 
   ngOnInit() {
-    this.fetchMovies(this.$http).then((movies) => {
-      this.movies = movies;
+    this.$log.info('Movie component init called');
+    this.movieService.fetchMovies().then((data) => {
+      this.movies = data;
     });
   }
 
   upRating(movie) {
-    if (movie.rating < 5) {
-      movie.rating += 1;
-    }
+      if (movie.rating < 5) {
+          movie.rating += 1;
+      }
   }
 
   downRating(movie) {
-    if (movie.rating > 1) {
-      movie.rating -= 1;
-    }
+      if (movie.rating > 1) {
+          movie.rating -= 1;
+      }
   }
 }
 
